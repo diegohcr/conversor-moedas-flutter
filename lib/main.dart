@@ -87,10 +87,12 @@ class _HomeState extends State<Home> {
             case ConnectionState.none:
             case ConnectionState.waiting:
               return Center(
-                  child: Text(
-                "Carregando dados...",
-                style: TextStyle(color: Colors.amber, fontSize: 25.0),
-                textAlign: TextAlign.center,
+                  child: SizedBox(
+                height: 50.0,
+                width: 50.0,
+                child: CircularProgressIndicator(
+                  strokeWidth: 5,
+                ),
               ));
             default:
               if (snapshot.hasError) {
